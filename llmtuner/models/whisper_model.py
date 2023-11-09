@@ -1,5 +1,5 @@
 from transformers import WhisperForConditionalGeneration
-from .base_model import BaseModel
+from llmtuner.models.base_model import BaseModel
 
 
 class WhisperModel(BaseModel):
