@@ -3,7 +3,7 @@ from llmtuner.models.base_model import BaseModel
 
 
 class WhisperModel(BaseModel):
-    def __init__(self, model_name_or_path, language="English", task="transcribe"):
+    def __init__(self, model_name_or_path, language=None, task="transcribe"):
         super().__init__()
         self.model_name_or_path = model_name_or_path
         self.language = language
