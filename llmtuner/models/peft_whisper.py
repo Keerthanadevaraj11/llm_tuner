@@ -1,5 +1,5 @@
 from transformers import WhisperForConditionalGeneration, BitsAndBytesConfig
-from .base_model import BaseModel
+from llmtuner.models.base_model import BaseModel
 from peft import prepare_model_for_kbit_training, LoraConfig, get_peft_model
 
 class PeftWhisperModel(BaseModel):
