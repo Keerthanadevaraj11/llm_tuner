@@ -7,7 +7,7 @@ from transformers import (
 )
 from dataclasses import dataclass
 from typing import Any, Dict, List, Union
-from .base_dataset import BaseDatasetProcessor
+from llmtuner.dataset.base_dataset import BaseDatasetProcessor
 
 class AudioDatasetProcessor(BaseDatasetProcessor):
     def __init__(self, model_name, language, task):
