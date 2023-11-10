@@ -13,9 +13,9 @@ class Model:
         self.peft_config = peft_config
         self.quantization_config = quantization_config
         self.model_instance = None
+        self.model.config.forced_decoder_tokens = ['<pad>', '<s>', '</s>', 'en']
 
     def load_model(self):
-        self.model.config.forced_decoder_tokens = ['<pad>', '<s>', '</s>', 'en']
         if self.use_peft:
             self.model_instance = PeftWhisperModel(
                 model_name_or_path=self.model_name_or_path,
