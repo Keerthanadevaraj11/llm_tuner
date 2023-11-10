@@ -21,7 +21,6 @@ class PeftWhisperModel(BaseModel):
 
     def _apply_peft_to_model(self, model):
 
-        model.config.forced_decoder_tokens = ['<pad>', '<s>', '</s>']
         model.is_peft_applied = True
         model = prepare_model_for_kbit_training(model)
         # Here, we'll apply the forward hook to make sure gradients are computed
