@@ -3,7 +3,7 @@ from llmtuner.models.base_model import BaseModel
 from peft import prepare_model_for_kbit_training, LoraConfig, get_peft_model
 
 class PeftWhisperModel(BaseModel):
-    def __init__(self, model_name_or_path, peft_config=None, language=None, task="transcribe", quantization_config=None):
+    def __init__(self, model_name_or_path, peft_config=None, language='en', task="transcribe", quantization_config=None):
         super().__init__()
         self.model_name_or_path = model_name_or_path
         self.language = language
