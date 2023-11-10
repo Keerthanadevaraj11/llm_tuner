@@ -12,7 +12,9 @@ class WhisperModel(BaseModel):
 
     def load(self):
         if not self.model:
-
+            # Set the quantized model to use forced decoding
+            if self.model.config.quantization_config:
+                self.model.config.quantization_config.q_decoder_force_decoding = True
             
             self.model = WhisperForConditionalGeneration.from_pretrained(self.model_name_or_path)
             self.model.config.forced_decoder_ids = None
