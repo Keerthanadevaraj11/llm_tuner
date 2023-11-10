@@ -18,7 +18,7 @@ class Model:
         if self.use_peft:
             self.model_instance = PeftWhisperModel(
                 model_name_or_path=self.model_name_or_path,
-                language=self.language,
+                language='en',
                 task=self.task,
                 peft_config=self.peft_config,
                 quantization_config=self.quantization_config
@@ -26,7 +26,7 @@ class Model:
         else:
             self.model_instance = WhisperModel(
                 model_name_or_path=self.model_name_or_path,
-                language=self.language,
+                language='en',
                 task=self.task
             )
 
