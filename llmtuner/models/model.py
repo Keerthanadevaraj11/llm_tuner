@@ -14,10 +14,11 @@ class Model:
         self.quantization_config = quantization_config
         self.model_instance = None
 
-        # Load the model
-        self.load_model()
-        
+        # Set the forced decoder tokens to English
         self.model.config.forced_decoder_tokens = ['<pad>', '<s>', '</s>', 'en']
+
+        # Load the model
+        self.model_instance = self.load_model()
 
     def load_model(self):
         if self.use_peft:
