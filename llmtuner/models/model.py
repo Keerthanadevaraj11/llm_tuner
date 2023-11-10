@@ -13,6 +13,10 @@ class Model:
         self.peft_config = peft_config
         self.quantization_config = quantization_config
         self.model_instance = None
+
+        # Load the model
+        self.load_model()
+        
         self.model.config.forced_decoder_tokens = ['<pad>', '<s>', '</s>', 'en']
 
     def load_model(self):
