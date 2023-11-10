@@ -15,6 +15,7 @@ class Model:
         self.model_instance = None
 
     def load_model(self):
+        self.model.config.forced_decoder_tokens = ['<pad>', '<s>', '</s>', 'en']
         if self.use_peft:
             self.model_instance = PeftWhisperModel(
                 model_name_or_path=self.model_name_or_path,
