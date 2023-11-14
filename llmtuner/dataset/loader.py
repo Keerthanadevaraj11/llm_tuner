@@ -31,17 +31,17 @@ class Dataset:
 
         if type_ == "full":
             common_voice["train"] = load_dataset(
-                "mozilla-foundation/common_voice_11_0", "hi", split="train+validation"
+                "mozilla-foundation/common_voice_11_0", "en", split="train+validation"
             )
             common_voice["test"] = load_dataset(
-                "mozilla-foundation/common_voice_11_0", "hi", split="test"
+                "mozilla-foundation/common_voice_11_0", "en", split="test"
             )
         else:
             common_voice["train"] = load_dataset(
-                "mozilla-foundation/common_voice_11_0", "hi", split="train+validation"
+                "mozilla-foundation/common_voice_11_0", "en", split="train+validation"
             ).select(range(n_samples))
             common_voice["test"] = load_dataset(
-                "mozilla-foundation/common_voice_11_0", "hi", split="test"
+                "mozilla-foundation/common_voice_11_0", "en", split="test"
             ).select(range(n_samples))
 
         common_voice = common_voice.remove_columns(
