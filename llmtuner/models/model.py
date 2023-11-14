@@ -2,7 +2,7 @@ from llmtuner.models.whisper_model import WhisperModel
 from llmtuner.models.peft_whisper import PeftWhisperModel
 
 class Model:
-    def __init__(self, model_name_or_path, language='en',
+    def __init__(self, model_name_or_path, language='ml',
                  task="transcribe", use_peft=False, 
                  peft_config=None, quantization_config=None):
         
