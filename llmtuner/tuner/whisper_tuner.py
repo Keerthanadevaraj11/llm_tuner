@@ -37,7 +37,7 @@ class Tuner:
         self.trained_model_path = trainer.model_saved_path
         return model
 
-    def inference(self, audio_file, language_abbr = 'ml'):
+    def inference(self, audio_file, language_abbr = 'ta'):
         if not self.trained:
             raise Exception("Model has not been trained yet. Call `fit` before performing inference.")
         
@@ -47,7 +47,7 @@ class Tuner:
                                              self.model_.use_peft)
         return transcription_pipeline.transcribe(audio_file)
 
-    def wer_eval(self, split, language_abbr = 'ml'):
+    def wer_eval(self, split, language_abbr = 'ta'):
         if not self.trained:
             raise Exception("Model has not been trained yet. Call `fit` before evaluating WER.")
 
@@ -57,7 +57,7 @@ class Tuner:
                                              self.model_.use_peft)
         return transcription_pipeline.evaluate_dataset(self.dataset[split])
 
-    def launch_ui(self, language_abbr = 'ml', share=True):
+    def launch_ui(self, language_abbr = 'ta', share=True):
         if not self.trained:
             raise Exception("Model has not been trained yet. Call `fit` before launching the UI.")
 
