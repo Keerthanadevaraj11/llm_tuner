@@ -3,7 +3,7 @@ from llmtuner.models.base_model import BaseModel
 
 
 class WhisperModel(BaseModel):
-    def __init__(self, model_name_or_path, language='en', task="transcribe"):
+    def __init__(self, model_name_or_path, language='ml', task="transcribe"):
         super().__init__()
         self.model_name_or_path = model_name_or_path
         self.language = language
@@ -12,17 +12,17 @@ class WhisperModel(BaseModel):
 
     def load(self):
         if not self.model:
-            # Set the quantized model to use forced decoding
-            self.model = WhisperForConditionalGeneration.from_pretrained(self.model_name_or_path)
+            # # Set the quantized model to use forced decoding
+            # self.model = WhisperForConditionalGeneration.from_pretrained(self.model_name_or_path)
     
-            # Load a pre-trained WhisperProcessor model
-            processor = WhisperProcessor.from_pretrained("openai/whisper-small")
+            # # Load a pre-trained WhisperProcessor model
+            # processor = WhisperProcessor.from_pretrained("openai/whisper-small")
     
-            # Get the decoder prompt IDs for the English language
-            decoder_prompt_ids = processor.get_decoder_prompt_ids(language="en", task="transcribe")
+            # # Get the decoder prompt IDs for the English language
+            # decoder_prompt_ids = processor.get_decoder_prompt_ids(language="ml", task="transcribe")
     
             # Set the forced decoder IDs
-            self.model.config.forced_decoder_ids = decoder_prompt_ids
+            self.model.config.forced_decoder_ids = None
     
             # Set other configuration parameters
             self.model.config.suppress_tokens = []
