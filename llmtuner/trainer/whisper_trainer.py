@@ -128,7 +128,7 @@ class WhisperModelTrainer(BaseTrainer):
 
     def push_to_hub(self, hub_push_kwargs=None):
         hub_push_kwargs_default = {
-            "language": 'ml',
+            "language": 'ta',
             "model_name": self.output_dir,
             "finetuned_from": self.model_name,
             "tasks": "automatic-speech-recognition",
