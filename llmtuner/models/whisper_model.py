@@ -3,7 +3,7 @@ from llmtuner.models.base_model import BaseModel
 
 
 class WhisperModel(BaseModel):
-    def __init__(self, model_name_or_path, language='ml', task="transcribe"):
+    def __init__(self, model_name_or_path, language='ta', task="transcribe"):
         super().__init__()
         self.model_name_or_path = model_name_or_path
         self.language = language
@@ -19,7 +19,7 @@ class WhisperModel(BaseModel):
             # processor = WhisperProcessor.from_pretrained("openai/whisper-small")
     
             # # Get the decoder prompt IDs for the English language
-            # decoder_prompt_ids = processor.get_decoder_prompt_ids(language="ml", task="transcribe")
+            # decoder_prompt_ids = processor.get_decoder_prompt_ids(language="ta", task="transcribe")
     
             # Set the forced decoder IDs
             self.model.config.forced_decoder_ids = None
